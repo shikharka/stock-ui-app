@@ -1,57 +1,61 @@
 <div class='quotesScreen'>
     <div class='quoteCard'>
-        <div class='cardDummy'>
-            <div class="container">
-                <div class="row">
-                    Symbol:<div class="symbol customForm">
-                        <input type="text" name="symbol" placeholder="Symbol">
+        <div class="container">
+            <div class="userInputs">
+                <div class="inputs">
+                    <span>Symbol:</span>
+                    <div class="symbol customForm">
+                        <input type="text" name="symbol" placeholder="Symbol" [(ngModel)]="symbol" (keyup)="$event.keyCode == 13 ? getStockQuote() : null">
                     </div>
-                    Exchange:<div class="exchange customForm">
-                        <select>
+                </div>
+                <div class="inputs">
+                    <span>Exchange:</span>
+                    <div class="exchange customForm">
+                        <select [(ngModel)]="exchange">
                             <option value="NSE">NSE</option>
                             <option value="BSE">BSE</option>
                         </select>
                     </div>
-                    <button class="fa fa-caret-right getQuoteBtn"></button>
                 </div>
-                <div class="row divider"></div>
-                <div class="row data">
-                    <div class="closeBubble">
-                        <div>Close</div>
-                        <div class="closeValue">.02</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">Volume</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">Open</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">prevClose</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">AvgVolume3Months</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">marketCap</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">monthly5Years</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">peRatio</div>
-                        <div class="quoteValue">10</div>
-                    </div>
-                    <div class="restQuotes">
-                        <div class="quoteHead">epsRatio</div>
-                        <div class="quoteValue">10</div>
-                    </div>
+                <button class="fa fa-caret-right getQuoteBtn" (click)="getStockQuote()"></button>
+            </div>
+            <div class="row divider"></div>
+            <div class="row data" *ngIf="quotes.close">
+                <div class="closeBubble">
+                    <div>Close</div>
+                    <div class="closeValue">{{quotes.close}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">Volume</div>
+                    <div class="quoteValue">{{quotes.volume}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">Open</div>
+                    <div class="quoteValue">{{quotes.open}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">prevClose</div>
+                    <div class="quoteValue">{{quotes.prevClose}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">AvgVolume3Months</div>
+                    <div class="quoteValue">{{quotes.avgVolume3Months}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">marketCap</div>
+                    <div class="quoteValue">{{quotes.marketCap}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">monthly5Years</div>
+                    <div class="quoteValue">{{quotes.monthly5Years}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">peRatio</div>
+                    <div class="quoteValue">{{quotes.peRatio}}</div>
+                </div>
+                <div class="restQuotes">
+                    <div class="quoteHead">epsRatio</div>
+                    <div class="quoteValue">{{quotes.epsRatio}}</div>
                 </div>
             </div>
         </div>

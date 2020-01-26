@@ -19,9 +19,9 @@ export class NodeStockService {
 
   // GET
   getQuote(exchange: string, symbol: string) {
-    this.url = `${this.url}/getQuote?exchange=${exchange}&symbol=${symbol}`
-    this.log(this.url)
-    return this.http.get(this.url)
+    let url = `${this.url}/getQuote?exchange=${exchange}&symbol=${symbol}`
+    this.log(url)
+    return this.http.get(url)
       .pipe(
         retry(1),
         catchError(this.errorHandl)
