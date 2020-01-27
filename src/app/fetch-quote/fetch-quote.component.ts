@@ -22,9 +22,11 @@ export class FetchQuoteComponent implements OnInit {
     epsRatio: any
   }
   constructor(private nodeStockService: NodeStockService) { }
+  loadingData: boolean
 
   ngOnInit() {
     this.exchange = 'NSE';
+    this.loadingData = false;
     this.quotes = {
       close: 0,
       volume: 0,
@@ -58,13 +60,17 @@ export class FetchQuoteComponent implements OnInit {
         peRatio: 0,
         epsRatio: 0
       }
+      this.symbol = this.symbol.toUpperCase()
+      this.loadingData = true;
       let quote;
-      this.nodeStockService.getQuote(this.exchange, this.symbol.toUpperCase())
+      this.nodeStockService.getQuote(this.exchange, this.symbol)
         .subscribe(
           data => {
             quote = data
           },
           err => {
+            this.loadingData = false;
+            alert(`Could Not Fetch Quote for ${this.symbol}`)
             this.logIt('Error: ' + err)
           },
           () => {

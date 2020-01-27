@@ -20,42 +20,42 @@
                 <button class="fa fa-caret-right getQuoteBtn" (click)="getStockQuote()"></button>
             </div>
             <div class="row divider"></div>
-            <div class="row data" *ngIf="quotes.close">
+            <div class="row data" *ngIf="loadingData">
                 <div class="closeBubble">
-                    <div>Close</div>
-                    <div class="closeValue">{{quotes.close}}</div>
+                    <div *ngIf="quotes.close">Close</div>
+                    <div class="closeValue" *ngIf="quotes.close">{{quotes.close}}</div>
                 </div>
                 <div class="restQuotes">
-                    <div class="quoteHead">Volume</div>
-                    <div class="quoteValue">{{quotes.volume}}</div>
+                    <div class="quoteHead" *ngIf="quotes.volume">Volume</div>
+                    <div class="quoteValue" *ngIf="quotes.volume">{{quotes.volume}}</div>
                 </div>
                 <div class="restQuotes">
-                    <div class="quoteHead">Open</div>
-                    <div class="quoteValue">{{quotes.open}}</div>
+                    <div class="quoteHead" *ngIf="quotes.open">Open</div>
+                    <div class="quoteValue" *ngIf="quotes.open">{{quotes.open}}</div>
                 </div>
                 <div class="restQuotes">
-                    <div class="quoteHead">prevClose</div>
-                    <div class="quoteValue">{{quotes.prevClose}}</div>
+                    <div class="quoteHead" *ngIf="quotes.prevClose">Previous close</div>
+                    <div class="quoteValue" *ngIf="quotes.prevClose">{{quotes.prevClose}}</div>
                 </div>
                 <div class="restQuotes">
-                    <div class="quoteHead">AvgVolume3Months</div>
-                    <div class="quoteValue">{{quotes.avgVolume3Months}}</div>
+                    <div class="quoteHead" *ngIf="quotes.avgVolume3Months">Avg. Volume(3 Months)</div>
+                    <div class="quoteValue" *ngIf="quotes.avgVolume3Months">{{quotes.avgVolume3Months}}</div>
                 </div>
                 <div class="restQuotes">
-                    <div class="quoteHead">marketCap</div>
-                    <div class="quoteValue">{{quotes.marketCap}}</div>
+                    <div class="quoteHead" *ngIf="quotes.marketCap">Market cap</div>
+                    <div class="quoteValue" *ngIf="quotes.marketCap">{{quotes.marketCap}}</div>
                 </div>
+                <!-- <div class="restQuotes">
+                    <div class="quoteHead" *ngIf="quotes.monthly5Years">monthly5Years</div>
+                    <div class="quoteValue" *ngIf="quotes.monthly5Years">{{quotes.monthly5Years}}</div>
+                </div> -->
                 <div class="restQuotes">
-                    <div class="quoteHead">monthly5Years</div>
-                    <div class="quoteValue">{{quotes.monthly5Years}}</div>
+                    <div class="quoteHead" *ngIf="quotes.peRatio">PE ratio</div>
+                    <div class="quoteValue" *ngIf="quotes.peRatio">{{quotes.peRatio}}</div>
                 </div>
-                <div class="restQuotes">
-                    <div class="quoteHead">peRatio</div>
-                    <div class="quoteValue">{{quotes.peRatio}}</div>
-                </div>
-                <div class="restQuotes">
-                    <div class="quoteHead">epsRatio</div>
-                    <div class="quoteValue">{{quotes.epsRatio}}</div>
+                <div class="restQuotes" *ngIf="quotes.epsRatio">
+                    <div class="quoteHead" *ngIf="quotes.epsRatio">EPS</div>
+                    <div class="quoteValue" *ngIf="quotes.epsRatio">{{quotes.epsRatio}}</div>
                 </div>
             </div>
         </div>
