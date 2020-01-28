@@ -10,12 +10,14 @@ git clone https://github.com/shikharka/stock-ui-app.git
 # change directory
 cd stock-ui-app
 
-# install the repo with npm
+# Install Dependencies
 npm install
 
-# start the server
+# Start the server
 npm start
 ```
+
+Application will start at http://localhost:4200
 
 Screen-
 ![Screen1](./screenshots/screen.png)
