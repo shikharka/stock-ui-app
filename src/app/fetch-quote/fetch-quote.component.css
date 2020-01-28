@@ -25,6 +25,7 @@
 .userInputs {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .inputs {
@@ -172,4 +173,5 @@
 
 .quoteValue {
     width: 30%;
+    margin-right: 10%;
 }
