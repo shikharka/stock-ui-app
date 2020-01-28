@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class NodeStockService {
 
-  private url = 'http://localhost:8888'
+  private url = 'https://shikharka-stocks-api.herokuapp.com'
 
   constructor(private http: HttpClient) { }
 
