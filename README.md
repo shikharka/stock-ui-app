@@ -16,3 +16,6 @@ npm install
 # start the server
 npm start
 ```
+
+Screen-
+![Screen1](./screenshots/screen.png)
