@@ -44,7 +44,7 @@ export class FetchQuoteComponent implements OnInit {
     return console.log(message)
   }
 
-  private getStockQuote = () => {
+  getStockQuote = () => {
     if (this.symbol == '') {
       alert('Symbol cannot be empty');
     }
