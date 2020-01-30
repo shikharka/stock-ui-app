@@ -10,6 +10,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class NodeStockService {
 
   private url = 'https://shikharka-stocks-api.herokuapp.com'
+  // private url = 'http://localhost:8080' // If backend running locally
 
   constructor(private http: HttpClient) { }
 
