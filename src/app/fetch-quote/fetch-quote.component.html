@@ -1,14 +1,14 @@
 <div class='quotesScreen'>
     <div class='quoteCard'>
-        <div class="container">
+        <div class="quoteContainer">
             <div class="userInputs">
-                <div class="inputs">
+                <div class="row inputs">
                     <span>Symbol:</span>
                     <div class="symbol customForm">
                         <input type="text" name="symbol" placeholder="Symbol" [(ngModel)]="symbol" (keyup)="$event.keyCode == 13 ? getStockQuote() : null">
                     </div>
                 </div>
-                <div class="inputs">
+                <div class="row inputs">
                     <span>Exchange:</span>
                     <div class="exchange customForm">
                         <select [(ngModel)]="exchange">
